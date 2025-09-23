@@ -21,3 +21,20 @@ d['uni'] = "Gau"
 d['name'] = "Mari"
 print(d)
 
+list = [2,1,4,5,3]
+print(sum(list))
+print(min(list))
+print(max(list))
+#avg
+avg = sum(list) / len(list)
+print(avg)
+
+list.append(102)
+print(list)
+
+list.insert(2,205)
+print(list)
+
+del list[3]
+print(list)
+
