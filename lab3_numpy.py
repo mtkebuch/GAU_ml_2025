@@ -1,4 +1,4 @@
-import numpy as np
+import numpy1 as np
 
 #14
 text = "i love watermelon"
