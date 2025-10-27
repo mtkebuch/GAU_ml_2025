@@ -101,3 +101,5 @@ for row in rows:
 
 df=pd.DataFrame(rows)
 df.to_excel('lastorw.xlsx',sheet_name="gpa under 3",index=False)
+
+
