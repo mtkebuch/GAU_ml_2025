@@ -60,3 +60,55 @@ data={
     'gvari':['tyebuchava','jolokhava','ujirauli']
 }
 print(data)
+
+
+arr=np.array([[1,2,3,4],[2,3,4,5]])
+print(arr[0,:2])
+print(arr[1,:3])
+
+matrix=np.random.randint(1,10,(3,3))
+print(matrix)
+
+#7
+x=int(input('sheiyvanet ricxvi:'))
+if x % 10 ==0:
+    print('ricxvi bolovdeba nulit')
+else:
+    print('ricxvi ar bolovdeba nulit')
+
+#11
+for i in range(20,125):
+    if i % 5 ==0:
+        print(i)
+
+#14
+nums=[]
+for i in range(10):
+    nums.append(random.randint(1,100))
+
+print(nums)
+
+nums=[]
+for i in range(10):
+    num=input('ricxvi:')
+    nums.append(num)
+
+print(nums)
+
+num=(input('ricxvi'))
+print(len(num))
+
+#lab2_2
+a=input('a:')
+b=input('b:')
+c=input('c:')
+print(max(a,b,c))
+
+#6
+nums=[]
+for _ in range(10):
+    nums.append(random.randint(1,10))
+
+print(nums)
+
+
