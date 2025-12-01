@@ -1,4 +1,4 @@
-from prcts import numpy1 as np
+from practise import numpy1 as np
 
 #14
 text = "i love watermelon"

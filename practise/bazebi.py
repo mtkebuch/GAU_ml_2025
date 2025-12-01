@@ -1,5 +1,6 @@
-import mysql.connector
 import random
+
+import mysql.connector
 import pandas as pd
 
 mydb=mysql.connector.connect(
@@ -8,41 +9,38 @@ mydb=mysql.connector.connect(
     password="",
     database="uni_db"
 )
+
 cursor=mydb.cursor()
 
 #1
 query="INSERT INTO students(name,lastname,gpa) VALUES(%s,%s,%s)"
-val=('gode','gogotchuri','2.3')
-
+val=('mari','tyebuchava','2.3')
 cursor.execute(query,val)
 mydb.commit()
 
 #2
-saxeli=['ani','nini','mari','soso','gigi']
-gvari=['gaia','aia','baia']
+q="INSERT INTO students(name,lastname,gpa) VALUES(%s,%s,%s)"
+saxeli=['mari','ani','lola']
+gvari=['tyebuchava','todua','gogochuri']
 students=[]
 
 for i in range(10):
     name=random.choice(saxeli)
-    surname=random.choice(gvari)
+    lastname=random.choice(gvari)
     gpa=round(random.uniform(1,4),2)
-    students.append((name,surname,gpa))
+    students.append((name,lastname,gpa))
 
-cursor.executemany(query,students)
+cursor.executemany(q,students)
 mydb.commit()
 
 #3
-query="SELECT gpa FROM students"
-cursor.execute(query)
+q="SELECT * FROM students WHERE name='mari'"
+cursor.execute(q)
 rows=cursor.fetchall()
-df=pd.DataFrame(rows)
-df.to_excel('students.xlsx')
 
 for row in rows:
     print(row)
 
-count=len(rows)
-print(count)
+df=pd.DataFrame(rows)
+df.to_excel('maris.xlsx',sheet_name='mari',index=False)
 
-avg=df[0].mean()
-print(avg)

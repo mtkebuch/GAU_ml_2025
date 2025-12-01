@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import random
 import numpy as np
 
+
 #1
 name=['nini','mari','ani','salo']
 gender=['male','female']
@@ -64,3 +65,29 @@ plt.ylabel('spending')
 plt.show()
 
 #4
+score=0
+dir=['left','right','back','forward']
+
+for i in range(10):
+    move=random.choice(dir)
+    if move=='right':
+        score+=1
+    else:
+        score-=1
+
+print(score)
+
+#5
+df = pd.read_csv(r"C:\Users\mtkeb\Desktop\GAU_ml_2025\laboratories\real-estate.csv")
+print(df.dtypes)
+avg_by_city=df.groupby('city')['price'].mean()
+print(avg_by_city)
+avg_by_rooms=df.groupby('state')['price'].mean()
+print(avg_by_rooms)
+
+plt.scatter(df['bed'],df['price'],color="red")
+plt.xlabel('bed')
+plt.ylabel('price')
+plt.title('city and price')
+plt.show()
+
